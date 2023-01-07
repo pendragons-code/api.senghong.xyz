@@ -1,0 +1,6 @@
+{
+	"windowMinutes": 15,
+	"maxWindowRequest": 100,
+	"standardHeaders": true,
+	"legacyHeaders": false
+}
