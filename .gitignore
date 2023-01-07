@@ -2,3 +2,6 @@ node_modules
 Dockerfile
 replit.nix
 .env
+json.sqlite
+package.json
+package-lock.json
