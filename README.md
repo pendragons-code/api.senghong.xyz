@@ -3,3 +3,6 @@ This is an open source version of a RESTful API that I will soon be deploying. I
 
 # Currently
 There is only 1 feature, conversion of celsius to kelvin and fahrenheit, I may consider implementing in some of my future bots alongside conversion of length speed and more!
+
+# Discord?
+This additional component is used to inform myself in the event there should be downtime.
