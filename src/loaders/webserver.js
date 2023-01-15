@@ -9,6 +9,8 @@ const frontEnd = require("./frontEnd.js")
 const app = express()
 const port = process.env.port
 
+if(!port) return console.log("Port is empty!")
+
 //I am aware that there is a way to do this with just one app.use, but i was adviced against using it because it would be unreadable!
 const limiter = rateLimit({
 	windowMs: windowMinutes * 60000,

@@ -10,6 +10,7 @@ readdirSync(`./src/api/`).forEach(dirs => {
 	for(const file of loadApiFile) {
 		const { execute, name } = require(`../api/${dirs}/${file}`)
 		routerAPI.post(`/${name}`, async (req, res) => {
+			if(!req.body) return res.json({ error: "You need to provide a json request!" })
 			execute(req, res)
 		})
 	}
