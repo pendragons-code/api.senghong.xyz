@@ -1,17 +1,17 @@
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
-	name: "celsius",
+	name: "fahrenheit",
 	async execute(req, res) {
 		if(!req.body.requestedTemperature) return res.json({ error: "You need to provide a number for me to parse!" })
 		if(isNaN(parseFloat(req.body.requestedTemperature))) return res.json({ error: "You need to provide a valid number!" })
 		await db.add(`SuccessfulRequestCounter`, 1)
-		let numberInCelsius = parseFloat(req.body.requestedTemperature)
+		let numberInFahrenheit = parseFloat(req.body.requestedTemperature)
+		let numberInCelsius = (numberInFahrenheit - 32) * 5/9
 		let numberInKelvin = numberInCelsius + 273.15
-		let numberInFahrenheit = (numberInCelsius * 9/5) + 32
 		return res.json({
-			requested: numberInCelsius,
+			requested: numberInFahrenheit,
 			kelvin: numberInKelvin,
-			fahrenheit: numberInFahrenheit
+			celsius: numberInCelsius
 		})
 	}
 }
