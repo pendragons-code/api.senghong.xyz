@@ -1,3 +1,6 @@
+# Deployment
+I have deployed an instance and it should be working, there is not much there yet and I will soon be working on more features
+
 # What is this?:
 This is an open source version of a RESTful API that I will soon be deploying. I'm not really good at this so should there be anything about the project that I can improve, please do tell me!
 

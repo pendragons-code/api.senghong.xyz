@@ -1,4 +1,5 @@
 const { readdirSync } = require("fs")
+const { AddEndpoints } = require("./EndpointLister.js")
 const express = require("express")
 const routerAPI = express.Router()
 routerAPI.use(express.json())
@@ -9,6 +10,7 @@ readdirSync(`./src/api/`).forEach(dirs => {
 	const loadApiFile = readdirSync(`./src/api/${dirs}`).filter(file => file.endsWith(".js"))
 	for(const file of loadApiFile) {
 		const { execute, name } = require(`../api/${dirs}/${file}`)
+		AddEndpoints(name)
 		routerAPI.post(`/${name}`, async (req, res) => {
 			if(!req.body) return res.json({ error: "You need to provide a json request!" })
 			execute(req, res)
