@@ -1,6 +1,6 @@
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
-	name: "FootPerSecond",
+	name: "MilePerHour",
 	category: "speed",
 	utilisation: `
 	{
@@ -11,14 +11,14 @@ module.exports = {
 		if(!req.body.requestedSpeed) return res.json({ error: "You need to provide a number for me to parse!" })
 		if(isNaN(req.body.requestedSpeed)) return res.json({ error: "You need to provide a number for me to parse!" })
 		await db.add(`SuccessfulRequestCounter`, 1)
-		let numberInFootPerSecond = parseFloat(req.body.requestedSpeed)
-		let numberInMilePerHour = numberInFootPerSecond / 5280 * 60 * 60
-		let numberInMeterPerSecond = numberInFootPerSecond / 3.281
-		let numberInKilometerPerHour = numberInFootPerSecond * 1.097
-		let numberInKnot = numberInFootPerSecond / 1.688
+		let numberInMilePerHour = parseFloat(req.body.requestedSpeed)
+		let numberInFootPerSecond = numberInMilePerHour * 1.46667
+		let numberInMeterPerSecond = numberInMilePerHour / 2.237
+		let numberInKilometerPerHour = numberInMilePerHour * 1.60934
+		let numberInKnot = numberInMilePerHour / 1.1507797683710483
 		return res.json({
-			requested: numberInFootPerSecond,
-			MilePerHour: numberInMilePerHour,
+			requested: numberInMilePerHour,
+			FootPerSecond: numberInFootPerSecond,
 			MeterPerSecond: numberInMeterPerSecond,
 			KilometerPerHour: numberInKilometerPerHour,
 			Knot: numberInKnot

@@ -1,9 +1,16 @@
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
 	name: "error",
+	category: "report",
+	utilisation: `
+	{
+		errorName: "Bananas on 404 pages!",
+		errorDescription: "The 404 pages are bananas!"
+	}
+	`,
 	async execute(req, res) {
 		if(!req.body.errorName) return res.json({ error: "You need to provide an error name for me to parse!" })
-		if(req.body.errorName.length < 25) return res.json({ error: "Your error name must be more than 25 characters!" })
+		if(req.body.errorName.length < 10) return res.json({ error: "Your error name must be more than 25 characters!" })
 		if(req.body.errorName.length > 200) return res.json({ error: "Your error name must not be more than 200 characters" })
 
 		if(!req.body.errorDescription) return res.json({ error: "I need a description of the error!" })
