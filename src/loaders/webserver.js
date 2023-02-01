@@ -26,7 +26,10 @@ app.set("view engine", "ejs")
 app.set("views", join(__dirname, "../webPages/views"))
 app.use(express.static(join(__dirname, "../webPages/public")))
 app.use(function(req, res) {
-	res.status(404).send("🍌, 404")
+	res.status(404).json({
+		404: "🍌, 404",
+		error: "404"
+	})
 })
 app.listen((port), async () => {
 	console.log(`Hanging onto dear life at ${process.pid}\n Currently listening at http://localhost:${port}!`)
