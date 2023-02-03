@@ -2,7 +2,8 @@ const { db } = require("../../loaders/dataBase.js")
 module.exports = {
 	name: "/",
 	async execute(req, res) {
-		const arrayOfEndpointsToPage = await db.get(`endpointsInDB`)
-		res.render("index.ejs", { endpoints: `/api/${arrayOfEndpointsToPage.join("<br>/api/")}` })
+		await db.add("SuccessfulRequestCounter", 1)
+		let endpointsInArray = await db.get("endpointsInArray")
+		res.render("index.ejs", { endpoints: `/api/${endpointsInArray.join("<br>/api/")}` })
 	}
 }

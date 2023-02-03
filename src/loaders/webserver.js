@@ -2,6 +2,7 @@ const express = require("express")
 const env = require("dotenv").config()
 const rateLimit = require("express-rate-limit")
 const { join } = require("path")
+const { db } = require("./dataBase.js")
 
 const { windowMinutes, maxWindowRequest, standardHeaders, legacyHeaders } = require("../../configuration/rateLimit.json")
 const apiRoute = require("./apiRoutes.js")
@@ -32,5 +33,5 @@ app.use(function(req, res) {
 	})
 })
 app.listen((port), async () => {
-	console.log(`Hanging onto dear life at ${process.pid}\n Currently listening at http://localhost:${port}!`)
+	console.log(`Hanging onto dear life at ${process.pid}\nCurrently listening at http://localhost:${port}!`)
 })
