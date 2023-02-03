@@ -1,7 +1,7 @@
 const { noNumberProvided } = require("../../../assets/errorMessages.json")
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
-	name: "radian",
+	name: "minuteOfArc",
 	category: "angles",
 	utilisation: `
 	{
@@ -12,19 +12,19 @@ module.exports = {
 		if(!req.body.requestedAngle) return res.json({ error: noNumberProvided })
 		if(isNaN(req.body.requestedAngle)) return res.json({ error: noNumberProvided })
 		await db.add(`SuccessfulRequestCounter`, 1)
-		let numberInRadian = parseFloat(req.body.requestedAngle)
-		let numberInDegrees = numberInRadian * (180/Math.PI)
-		let numberInGradian = numberInRadian * 200/Math.PI
+		let numberInMinuteOfArc = parseFloat(req.body.requestedAngle)
+		let numberInDegrees = numberInMinuteOfArc / 60
+		let numberInRadian = numberInMinuteOfArc * Math.PI / (60 * 180)
+		let numberInGradian = numberInMinuteOfArc / 54
 		let numberInMilliradian = numberInRadian * 1000
-		let numberInSecondOfArc = numberInRadian * (3600 * 180)/Math.PI
-		let numberInMinuteOfArc = numberInRadian * (60 * 180)/Math.PI
+		let numberInSecondOfArc = numberInMinuteOfArc * 60
 		return res.json({
-			requested: numberInRadian,
+			requested: numberInMinuteOfArc,
 			Degrees: numberInDegrees,
+			Radian: numberInRadian,
 			Gradian: numberInGradian,
 			Milliradian: numberInMilliradian,
-			SecondOfArc: numberInSecondOfArc,
-			MinuteOfArc: numberInMinuteOfArc
+			SecondOfArc: numberInSecondOfArc
 		})
 	}
 }

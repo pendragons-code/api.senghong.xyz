@@ -1,3 +1,4 @@
+const { noNumberProvided } = require("../../../assets/errorMessages.json")
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
 	name: "MeterPerSecond",
@@ -8,8 +9,8 @@ module.exports = {
 	}
 	`,
 	async execute(req, res) {
-		if(req.body.requestedSpeed) return res.json({ error: "You need to provide a number to parse!" })
-		if(isNaN(req.body.requestedSpeed)) return res.json({ error: "You need to provide a number for me to parse!" })
+		if(!req.body.requestedSpeed) return res.json({ error: noNumberProvided })
+		if(isNaN(req.body.requestedSpeed)) return res.json({ error: noNumberProvided })
 		await db.add(`SuccessfulRequestCounter`, 1)
 		let numberInMeterPerSecond = parseFloat(req.body.requestedSpeed)
 		let numberInFootPerSecond = numberInMeterPerSecond * 3.28084

@@ -1,3 +1,4 @@
+const { noNumberProvided } = require("../../../assets/errorMessages.json")
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
 	name: "degrees",
@@ -8,8 +9,8 @@ module.exports = {
 	}
 	`,
 	async execute(req, res) {
-		if(req.body.requestedAngle) return res.json({ error: "You need to provide a number to parse!" })
-		if(isNaN(req.body.requestedAngle)) return res.json({ error: "You need to provide a number to parse!" })
+		if(!req.body.requestedAngle) return res.json({ error: noNumberProvided })
+		if(isNaN(req.body.requestedAngle)) return res.json({ error: noNumberProvided })
 		await db.add(`SuccessfulRequestCounter`, 1)
 		let numberInDegrees = parseFloat(req.body.requestedAngle)
 		let numberInRadian = numberInDegrees * (Math.PI/180)

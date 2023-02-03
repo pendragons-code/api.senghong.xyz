@@ -10,3 +10,6 @@ TODOs:
 			[.] celsius, sample code and details
 			[.] ... other commands from Temperature category
 
+
+		if(!req.body.requestedTemperature) return res.json({ error: noNumberProvided })
+		if(isNaN(req.body.requestedTemperature)) return res.json({ error: noNumberProvided })
