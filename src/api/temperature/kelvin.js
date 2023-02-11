@@ -2,14 +2,15 @@ const { noNumberProvided } = require("../../../assets/errorMessages.json")
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
 	name: "kelvin",
+	category: "temperature"
 	utilisation: `
 	{
 		requestedTemperature: 5
 	}
 	`,
 	async execute(req, res) {
-		if(!req.body.requestedTemperature) return res.json({ error: "You need to provide a number for me to parse!" })
-		if(isNaN(req.body.requestedTemperature)) return res.json({ error: "You need to provide a valid number!" })
+		if(!req.body.requestedTemperature) return res.json({ error: noNumberProvided })
+		if(isNaN(req.body.requestedTemperature)) return res.json({ error: noNumberProvided })
 		await db.add(`SuccessfulRequestCounter`, 1)
 		let numberInKelvin = parseFloat(req.body.requestedTemperature)
 		let numberInCelsius = numberInKelvin - 273.15

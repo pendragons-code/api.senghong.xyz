@@ -2,6 +2,7 @@ const { noNumberProvided } = require("../../../assets/errorMessages.json")
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
 	name: "celsius",
+	category: "temperature",
 	utilisation: `
 	{
 		requestedTemperature: 5
