@@ -35,3 +35,5 @@ axios({
 # Issues:
 code quality enhancement!
 
+# Dev-dependencies
+I like using nodemon and husky, but I recognize that some other people like to use other tools. Therefor, I did not really add that many config files to this thing.
