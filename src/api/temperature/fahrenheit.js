@@ -2,6 +2,11 @@ const { noNumberProvided } = require("../../../assets/errorMessages.json")
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
 	name: "fahrenheit",
+	utilisation: `
+	{
+		requestedTemperature: 5
+	}
+	`,
 	async execute(req, res) {
 		if(!req.body.requestedTemperature) return res.json({ error: noNumberProvided })
 		if(isNaN(req.body.requestedTemperature)) return res.json({ error: noNumberProvided })

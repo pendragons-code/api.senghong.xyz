@@ -2,6 +2,11 @@ const { noNumberProvided } = require("../../../assets/errorMessages.json")
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
 	name: "kelvin",
+	utilisation: `
+	{
+		requestedTemperature: 5
+	}
+	`,
 	async execute(req, res) {
 		if(!req.body.requestedTemperature) return res.json({ error: "You need to provide a number for me to parse!" })
 		if(isNaN(req.body.requestedTemperature)) return res.json({ error: "You need to provide a valid number!" })
