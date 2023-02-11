@@ -32,7 +32,6 @@ axios({
 	console.log(result)
 })
 ```
+# Issues:
+code quality enhancement!
 
-# Issue:
-
-some exporting stuff does not seem to work and some stuff regarding the db also does not work. I am currently conflicted about using a normal array to list all the endpoint or using a db. I originally wanted to integrate a discord bot and one of the things be uptime status for certain endpoints. So in the event the api is down, there is a list of endpoints and the utilisation of those endpoints are still around. Let me figure this one out!

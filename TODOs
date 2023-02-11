@@ -1,15 +1,2 @@
 TODOs:
-
-[.] Add help link
-[.] Add utilisation
-[.] Add category
-[.] Add an actual helpful UI to the main page
-[.] endpoint documentation
-	[.] by category
-		[.] e.g.: Temperature
-			[.] celsius, sample code and details
-			[.] ... other commands from Temperature category
-
-
-		if(!req.body.requestedTemperature) return res.json({ error: noNumberProvided })
-		if(isNaN(req.body.requestedTemperature)) return res.json({ error: noNumberProvided })
+[.] actually plesant looking landing page!s.json({ error: noNumberProvided })
