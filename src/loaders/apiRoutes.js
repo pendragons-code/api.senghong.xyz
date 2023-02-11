@@ -6,20 +6,21 @@ routerAPI.use(express.json())
 routerAPI.get("/test", async (req, res) => {
 	res.send("hit test")
 })
-readdirSync(`./src/api/`).forEach(async (dirs) => {
-	const loadApiFile = readdirSync(`./src/api/${dirs}`).filter(file => file.endsWith(".js"))
-	for await (const file of loadApiFile) {
-		const { execute, name } = await require(`../api/${dirs}/${file}`)
-		let endpointsInArray = await db.get("endpointsInArray")
-		if(endpointsInArray === null || !endpointsInArray.includes(name)){
-			await db.push("endpointsInArray", name)
-			console.log(name)
-			console.log(endpointsInArray)
+async function loadRoutes() {
+	//wanted to avoid this, but whatever
+	let endpointsInArray = await db.get("endpointsInArray")
+	let loadRouteDirectories = await readdirSync("./src/api").filter(dirs => dirs)
+	for(const dirs of loadRouteDirectories) {
+		let loadApiFile = await readdirSync(`./src/api/${dirs}`).filter(file => file.endsWith(".js"))
+		for(const file of loadApiFile) {
+			const { execute, name } = require(`../api/${dirs}/${file}`)
+			if(endpointsInArray === null || !endpointsInArray.includes(name)) await db.push("endpointsInArray", name)
+			routerAPI.post(`/${name}`, async (req, res) => {
+				if(!req.body) return res.json({ error: "You need to provide a json request!" })
+				execute(req, res)
+			})
 		}
-		routerAPI.post(`/${name}`, async (req, res) => {
-			if(!req.body) return res.json({ error: "You need to provide a json request!" })
-			execute(req, res)
-		})
 	}
-})
+}
+loadRoutes()
 module.exports = routerAPI
