@@ -1,3 +1,5 @@
 {
-	"noNumberProvided": "You need to provide a number for me to parse!"
+	"noJsonProvided": "The request you sent did not contain JSON.",
+	"noNumberProvided": "You need to provide a number for me to parse!",
+	"invalidRequest": "You included parameters that were invalid!"
 }

@@ -33,7 +33,7 @@ axios({
 })
 ```
 # Issues:
-code quality enhancement!
+Code quality enhancement. Hosting issues and more... That said, the whole this is in Beta. Should there be more for me to implement, I might consider it.
 
 # Dev-dependencies
 I like using nodemon and husky, but I recognize that some other people like to use other tools. Therefor, I did not really add that many config files to this thing.

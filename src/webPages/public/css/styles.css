@@ -1,8 +1,18 @@
 body {
-  background-color: lightblue;
+  background-color: #000000;
 }
 
 p {
-  font-family: verdana;
-  font-size: 20px;
+	color: #737aa2;
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 15px;
+}
+code {
+	font-family: monospace;
+	color: #737aa2;
+	padding: 2px;
+	white-space: normal;
+	font-size: 100%;
+	font-weight: bold;
 }
