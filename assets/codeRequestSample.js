@@ -2,7 +2,7 @@ const codeRequestSampleOne = `
 const axios = require("axios")
 <br>axios({
 <br> method: "post",
-<br> url: "http://localhost:3000/api/celsius",
+<br> url: "http://api.senghong.xyz:3000/api/celsius",
 <br> headers: {
 <br>  "Content-Type": "application/json"
 <br> },
