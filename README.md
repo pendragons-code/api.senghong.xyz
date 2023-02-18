@@ -1,11 +1,15 @@
 # Deployment
-I have deployed an instance and it should be working, there is not much there yet and I will soon be working on more features
+I have deployed an instance and it should be working, there is not much there yet and I will soon be working on more features.
 
-# What is this?:
-This is an open source version of a RESTful API that I will soon be deploying. I'm not really good at this so should there be anything about the project that I can improve, please do tell me!
+# What is this?
+This is an open source version of a RESTful API that I will soon be deploying. I'm not really good at this so should there be anything about the project that I can improve, please do tell me!			
 
 # Currently
-routes are handled dynamically and that means naming and configuration can be interpreted as slightly easier.
+The routes are handled dynamically and that means naming and configuration can be interpreted as slightly easier.
+
+# Docs
+Sending a get request to a specific endpoint will get it to send the utilisation or the required json fields!				
+[Here](https://api.senghong.xyz/api/secondOfArc) is an example!
 
 # how to run
 ```
@@ -33,7 +37,6 @@ axios({
 })
 ```
 # Issues:
-Code quality enhancement. Hosting issues and more... That said, the whole this is in Beta. Should there be more for me to implement, I might consider it.
-
+Code quality enhancement, especially on the front-end because I lean more to the back-end.
 # Dev-dependencies
 I like using nodemon and husky, but I recognize that some other people like to use other tools. Therefor, I did not really add that many config files to this thing.
