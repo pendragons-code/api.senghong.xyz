@@ -1,3 +1,7 @@
+# NOTICE:
+If you are running this app for the first time, you may notice that the pages in relation to documentation are not up, this is because the db is not able to put the items in during the first load, it is currently 4am and i cannot figure out why this is happening. The fix is to just run it again.
+
+
 # Deployment
 I have deployed an instance and it should be working, there is not much there yet and I will soon be working on more features.
 
@@ -9,7 +13,8 @@ The routes are handled dynamically and that means naming and configuration can b
 
 # Docs
 Sending a get request to a specific endpoint will get it to send the utilisation or the required json fields!				
-[Here](https://api.senghong.xyz/api/secondOfArc) is an example!
+[Here](https://api.senghong.xyz/api/secondOfArc) is an example!			
+Proper documentation will soon be implemented. I'm just not sure how I should present it!
 
 # how to run
 ```

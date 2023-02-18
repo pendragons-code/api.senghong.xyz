@@ -2,11 +2,10 @@ const express = require("express")
 const env = require("dotenv").config()
 const rateLimit = require("express-rate-limit")
 const { join } = require("path")
-const { db } = require("./dataBase.js")
-
 const { windowMinutes, maxWindowRequest, standardHeaders, legacyHeaders } = require("../../configuration/rateLimit.json")
 const apiRoute = require("./apiRoutes.js")
 const frontEnd = require("./frontEnd.js")
+const docsRouter = require("./docsBuilder.js")
 const app = express()
 const port = process.env.port
 
@@ -22,6 +21,7 @@ const limiter = rateLimit({
 
 app.use(limiter)
 app.use("/api/", apiRoute)
+app.use("/docs/", docsRouter)
 app.use("/", frontEnd)
 app.set("view engine", "ejs")
 app.set("views", join(__dirname, "../webPages/views"))
