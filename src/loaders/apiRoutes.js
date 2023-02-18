@@ -16,7 +16,7 @@ async function loadRoutes() {
 		let loadApiFile = await readdirSync(`./src/api/${dirs}`).filter(file => file.endsWith(".js"))
 		for(const file of loadApiFile) {
 			const { category, execute, name, utilisation } = require(`../api/${dirs}/${file}`)
-			if(endpointsInArray === null || !endpointsInArray.includes(name)) await db.push("endpointsInArray", name)
+			if(endpointsInArray === null || !endpointsInArray.includes(`${name} - ${category}`)) await db.push("endpointsInArray", `${name} - ${category}`)
 			if(endpointsUtilisation === null || endpointsUtilisation[category] === null) await db.set(`endpointsUtilisation.${category}`, utilisation)
 			routerAPI.post(`/${name}`, async (req, res) => {
 				if(!req.body) return res.json({ error: "You need to provide a json request!" })
