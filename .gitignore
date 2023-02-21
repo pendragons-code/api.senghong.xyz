@@ -3,4 +3,5 @@ Dockerfile
 replit.nix
 .env
 json.sqlite
+template.txt
 package-lock.json

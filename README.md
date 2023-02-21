@@ -1,6 +1,5 @@
 # NOTICE:
-If you are running this app for the first time, you may notice that the pages in relation to documentation are not up, this is because the db is not able to put the items in during the first load, it is currently 4am and i cannot figure out why this is happening. The fix is to just run it again.
-
+If you are running this app for the first time, you may notice that the pages in relation to documentation are not up, this is because the db is not able to put the items in during the first load, it is currently 4am and i cannot figure out why this is happening. The fix is to just run it again.			
 
 # Deployment
 I have deployed an instance and it should be working, there is not much there yet and I will soon be working on more features.
