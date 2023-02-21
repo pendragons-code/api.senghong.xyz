@@ -68,6 +68,9 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │   │   │   ├── minuteOfArc.js
 │   │   │   ├── radian.js
 │   │   │   └── secondOfArc.js
+│   │   ├── length
+│   │   │   ├── centimeters.js
+│   │   │   └── meter.js
 │   │   ├── report
 │   │   │   └── errors.js
 │   │   ├── speed
@@ -83,6 +86,7 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │   ├── loaders
 │   │   ├── apiRoutes.js
 │   │   ├── dataBase.js
+│   │   ├── docsBuilder.js
 │   │   ├── frontEnd.js
 │   │   └── webserver.js
 │   └── webPages
@@ -95,11 +99,11 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │       │       ├── landingPage.css
 │       │       └── styles.css
 │       └── views
+│           ├── docs.ejs
 │           ├── EndPoints.ejs
 │           └── landingPage.ejs
 └── tests
     └── fetchTemperatures.js
 
-16 directories, 35 files
-
+17 directories, 39 files
 ```
