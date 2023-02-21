@@ -1,4 +1,4 @@
-const { noNumberProvided } = require("../../../assets/errorMessages.json")
+const { noNumberProvided, noJsonProvided } = require("../../../assets/errorMessages.json")
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
 	name: "degrees",
@@ -9,7 +9,7 @@ module.exports = {
 	}
 	`,
 	async execute(req, res) {
-		if(!req.body.requestedAngle) return res.json({ error: noNumberProvided })
+		if(!req.body.requestedAngle) return res.json({ error: noJsonProvided })
 		if(isNaN(req.body.requestedAngle)) return res.json({ error: noNumberProvided })
 		await db.add(`SuccessfulRequestCounter`, 1)
 		let numberInDegrees = parseFloat(req.body.requestedAngle)
