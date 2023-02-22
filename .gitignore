@@ -6,4 +6,4 @@ replit.nix
 database.sqlite
 template.txt
 package-lock.json
-BACKUPS
+hereBACKUPS
