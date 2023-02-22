@@ -1,5 +1,7 @@
 # NOTICE:
-If you are running this app for the first time, you may notice that the pages in relation to documentation are not up, this is because the db is not able to put the items in during the first load, it is currently 4am and i cannot figure out why this is happening. The fix is to just run it again.			
+If you are running it the first time, the execution of endpoint and utilisation registry will not be fast enough to be completed. I actually got inconsistent results with this whole thing, the db would sometimes be able to have it work instantly on the first try and sometimes get the thing to work after waiting a while. But most of the time, the db would not be able to get all the things out in time and it seems that only upon a restart it could work!				
+
+TLDR: If your `docs/category here` is not working, try restarting the thing first. If the issue still persists, consider making an issue!
 
 # Deployment
 I have deployed an instance and it should be working, there is not much there yet and I will soon be working on more features.

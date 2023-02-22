@@ -1,6 +1,4 @@
 const { db } = require("./dataBase.js")
-const { domain } = require("../../configuration/hosting.json")
-const env = require("dotenv").config()
 const express = require("express")
 const docsRouter = express.Router()
 docsRouter.get("/test", async (req, res) => {
@@ -8,9 +6,10 @@ docsRouter.get("/test", async (req, res) => {
 })
 async function loadDocs() {
 	//Really wanted to avoid this!
-	const port = process.env.port
 	let endpointsUtilisation = await db.get("endpointsUtilisation")
+	//Issue: db is trying to get endpointsUtilisation, but the thing is not working because the thing is null when this whole thing has ran for the first time.
 	let endpointsUtilisationByCategory = ""
+	if(endpointsUtilisation === null) return console.log("DB has not gotten the endpoint utilisation, try running the project again!")
 	if(endpointsUtilisation !== null) endpointsUtilisationByCategory = Object.keys(endpointsUtilisation)
 	for(const endpointsUtilisationForFrontEnd of endpointsUtilisationByCategory){
 		docsRouter.get(`/${endpointsUtilisationForFrontEnd}`, async (req, res) => {
