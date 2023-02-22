@@ -3,6 +3,7 @@ node_modules
 Dockerfile
 replit.nix
 .env
-json.sqlite
+database.sqlite
 template.txt
 package-lock.json
+BACKUPS
