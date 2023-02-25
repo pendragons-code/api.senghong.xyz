@@ -2,5 +2,6 @@
 	"noJsonProvided": "The request you sent did not contain JSON.",
 	"noNumberProvided": "You need to provide a number for me to parse!",
 	"invalidRequest": "You included parameters that were invalid!",
-	"maximumLength": "The string you sent is longer than the limit!"
+	"maximumLength": "The string you sent is longer than the limit!",
+	"noStringProvided": "You need to provide a string for this to work!"
 }
