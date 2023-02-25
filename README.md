@@ -1,16 +1,10 @@
-# NOTICE:
+# NOTICE!
 If you are running it the first time, the execution of endpoint and utilisation registry will not be fast enough to be completed. I actually got inconsistent results with this whole thing, the db would sometimes be able to have it work instantly on the first try and sometimes get the thing to work after waiting a while. But most of the time, the db would not be able to get all the things out in time and it seems that only upon a restart it could work!				
 
 TLDR: If your `docs/category here` is not working, try restarting the thing first. If the issue still persists, consider making an issue!
 
-# Deployment
-I have deployed an instance and it should be working, there is not much there yet and I will soon be working on more features.
-
 # What is this?
-This is an open source version of a RESTful API that I will soon be deploying. I'm not really good at this so should there be anything about the project that I can improve, please do tell me!			
-
-# Currently
-The routes are handled dynamically and that means naming and configuration can be interpreted as slightly easier.
+This is a basic project I decided to make just for fun. I will be adding more features in the future XD!
 
 # Docs
 Sending a get request to a specific endpoint will get it to send the utilisation or the required json fields!				
@@ -42,8 +36,6 @@ axios({
 	console.log(result)
 })
 ```
-# Issues:
-Code quality enhancement, especially on the front-end because I lean more to the back-end.
 # Dev-dependencies
 I like using nodemon and husky, but I recognize that some other people like to use other tools. Therefor, I did not really add that many config files to this thing.
 
