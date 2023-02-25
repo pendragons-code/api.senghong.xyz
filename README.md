@@ -64,10 +64,16 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │   │   │   └── secondOfArc.js
 │   │   ├── length
 │   │   │   ├── centimeters.js
+│   │   │   ├── foot.js
+│   │   │   ├── inch.js
 │   │   │   ├── kilometer.js
 │   │   │   ├── meter.js
 │   │   │   ├── micrometer.js
-│   │   │   └── millimeter.js
+│   │   │   ├── mile.js
+│   │   │   ├── millimeter.js
+│   │   │   ├── nanometer.js
+│   │   │   ├── nauticalMile.js
+│   │   │   └── yard.js
 │   │   ├── report
 │   │   │   └── errors.js
 │   │   ├── speed
@@ -103,5 +109,5 @@ I like using nodemon and husky, but I recognize that some other people like to u
 └── tests
     └── fetchTemperatures.js
 
-18 directories, 43 files
+18 directories, 49 files
 ```
