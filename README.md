@@ -3,6 +3,9 @@ If you are running it the first time, the execution of endpoint and utilisation 
 
 TLDR: If your `docs/category here` is not working, try restarting the thing first. If the issue still persists, consider making an issue!
 
+# encoding and decoding
+I decided to put a cap on that as I did not want to get spammed with riduclously hard to encode or decode requests and causing the site to crash. I might bump the limit up in the future tho.
+
 # What is this?
 This is a basic project I decided to make just for fun. I will be adding more features in the future XD!
 
@@ -51,6 +54,7 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │   ├── rateLimit.json
 │   └── ToSendID.json
 ├── DataBase
+│   └── placeholder.txt
 ├── package.json
 ├── README.md
 ├── src
@@ -62,6 +66,12 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │   │   │   ├── minuteOfArc.js
 │   │   │   ├── radian.js
 │   │   │   └── secondOfArc.js
+│   │   ├── decoding
+│   │   │   ├── base64.js
+│   │   │   └── binary.js
+│   │   ├── encoding
+│   │   │   ├── base64.js
+│   │   │   └── binary.js
 │   │   ├── length
 │   │   │   ├── centimeters.js
 │   │   │   ├── foot.js
@@ -107,7 +117,7 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │           ├── EndPoints.ejs
 │           └── landingPage.ejs
 └── tests
-    └── fetchTemperatures.js
+    └── endpointTest.js
 
-18 directories, 49 files
+20 directories, 54 files
 ```
