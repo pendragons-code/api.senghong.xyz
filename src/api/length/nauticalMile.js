@@ -1,7 +1,7 @@
 const { noNumberProvided, noJsonProvided } = require("../../../assets/errorMessages.json")
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
-	name: "inch",
+	name: "nauticalMile",
 	category: "length",
 	utilisation: `
 	{
@@ -12,19 +12,19 @@ module.exports = {
 		if(!req.body.requestedLength) return res.json({ error: noJsonProvided })
 		if(isNaN(req.body.requestedLength)) return res.json({ error: noNumberProvided })
 		await db.add(`SuccessfulRequestCounter`, 1)
-		let numberInInch = parseFloat(req.body.requestedLength)
-		let numberInCentimeter = numberInInch * 2.54
-		let numberInMeter = numberInInch / 39.37
-		let numberInKilometer = numberInMeter * 1000
-		let numberInMillimeter = numberInInch * 25.4
-		let numberInMicrometer = numberInInch * 25400
-		let numberInNanometer = numberInInch * 2.54e+7
-		let numberInMile = numberInInch / 63360
-		let numberInYard = numberInInch / 36
-		let numberInFoot = numberInInch / 12
-		let numberInNauticalMile = numberInInch / 72910
+		let numberInNauticalMile = parseFloat(req.body.requestedLength)
+		let numberInCentimeter = numberInNauticalMile * 185200
+		let numberInMeter = numberInCentimeter / 100
+		let numberInKilometer = numberInMeter / 1000
+		let numberInMillimeter = numberInCentimeter * 10
+		let numberInMicrometer = numberInCentimeter * 10000
+		let numberInNanometer = numberInCentimeter * 1e+7
+		let numberInMile = numberInNauticalMile * 1.151
+		let numberInYard = numberInNauticalMile * 2025.37
+		let numberInFoot = numberInNauticalMile * 6076.12
+		let numberInInch = numberInNauticalMile * 72913.4
 		return res.json({
-			requested: numberInInch,
+			requested: numberInNauticalMile,
 			Centimeter: numberInCentimeter,
 			Meter: numberInMeter,
 			Kilometer: numberInKilometer,
@@ -34,7 +34,7 @@ module.exports = {
 			Mile: numberInMile,
 			Yard: numberInYard,
 			Foot: numberInFoot,
-			NauticalMile: numberInNauticalMile
+			Inch: numberInInch
 		})
 	}
 }
