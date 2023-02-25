@@ -1,4 +1,5 @@
 const { readdirSync } = require("fs")
+const { noJsonProvided } = require("../../assets/errorMessages.json")
 const { db } = require("./dataBase.js")
 const express = require("express")
 const routerAPI = express.Router()
@@ -18,7 +19,7 @@ async function loadRoutes() {
 			if(endpointsInArray === null || !endpointsInArray.includes(`${name} - ${category}`)) await db.push("endpointsInArray", `${name} - ${category}`)
 			if(endpointsUtilisation === null || endpointsUtilisation[category] === null) await db.set(`endpointsUtilisation.${category}`, utilisation)
 			routerAPI.post(`/${name}`, async (req, res) => {
-				if(!req.body) return res.json({ error: "You need to provide a json request!" })
+				if(!req.body) return res.json({ error: noJsonProvided })
 				execute(req, res)
 			})
 			routerAPI.get(`/${name}`, async (req, res) => {

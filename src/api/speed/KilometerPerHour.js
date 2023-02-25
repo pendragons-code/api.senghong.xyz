@@ -1,4 +1,4 @@
-const { noNumberProvided, noJsonProvided } = require("../../../assets/errorMessages.json")
+const { noNumberProvided, invalidRequest } = require("../../../assets/errorMessages.json")
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
 	name: "KilometerPerHour",
@@ -9,7 +9,7 @@ module.exports = {
 	}
 	`,
 	async execute(req, res) {
-		if(!req.body.requestedSpeed) return res.json({ error: noJsonProvided })
+		if(!req.body.requestedSpeed) return res.json({ error: invalidRequest })
 		if(isNaN(req.body.requestedSpeed)) return res.json({ error: noNumberProvided })
 		await db.add(`SuccessfulRequestCounter`, 1)
 		let numberInKilometerPerHour = parseFloat(req.body.requestedSpeed)

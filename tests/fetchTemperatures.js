@@ -1,12 +1,12 @@
 const axios = require("axios")
 axios({
 	method: "post",
-	url: "http://localhost:3000/api/celsius",
+	url: "http://localhost:3000/api/base64",
 	headers: {
 		"Content-Type": "application/json"
 	},
 	data: {
-		requestedTemperature: 1
+		requestedString: "1"
 	}
 }).then((result) => {
 	console.log(result.data)
