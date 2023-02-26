@@ -2,7 +2,7 @@ const { invalidRequest, maximumLength, noStringProvided } = require("../../../as
 const { db } = require("../../loaders/dataBase.js")
 module.exports = {
 	name: "encodeBase64",
-	categoty: "encoding",
+	category: "encoding",
 	utilisation: `
 	{
 		requestedString: "ILikeApples"
