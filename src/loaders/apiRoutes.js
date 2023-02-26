@@ -17,7 +17,6 @@ async function loadRoutes() {
 		for(const file of loadApiFile) {
 			const { category, execute, name, utilisation } = require(`../api/${dirs}/${file}`)
 			if(endpointsInArray === null || !endpointsInArray.includes(`${name} - ${category}`)) await db.push("endpointsInArray", `${name} - ${category}`)
-			console.log(endpointsInArray)
 			if(endpointsUtilisation === null || endpointsUtilisation[category] === null || endpointsUtilisation[category] === undefined) await db.set(`endpointsUtilisation.${category}`, utilisation)
 			routerAPI.post(`/${name}`, async (req, res) => {
 				if(!req.body) return res.json({ error: noJsonProvided })
