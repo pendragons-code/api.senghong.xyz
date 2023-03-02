@@ -6,4 +6,5 @@ replit.nix
 database.sqlite
 template.txt
 package-lock.json
+rockyou.txt
 BACKUPS

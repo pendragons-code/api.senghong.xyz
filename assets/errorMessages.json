@@ -3,5 +3,6 @@
 	"noNumberProvided": "You need to provide a number for me to parse!",
 	"invalidRequest": "You included parameters that were invalid!",
 	"maximumLength": "The string you sent is longer than the limit!",
-	"noStringProvided": "You need to provide a string for this to work!"
+	"noStringProvided": "You need to provide a string for this to work!",
+	"minimumLength": "The string you sent is too short!"
 }
