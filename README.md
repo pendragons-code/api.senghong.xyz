@@ -3,6 +3,10 @@ If you are running it the first time, the execution of endpoint and utilisation 
 
 TLDR: If your `docs/category here` is not working, try restarting the thing first. If the issue still persists, consider making an issue!
 
+# Getting other files
+
+Due to the fact that I cannot upload the rockyou file, you are going to have to download the file and move it to `./assets`.
+
 # encoding and decoding
 I decided to put a cap on that as I did not want to get spammed with riduclously hard to encode or decode requests and causing the site to crash. I might bump the limit up in the future tho.
 
