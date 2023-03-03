@@ -14,6 +14,6 @@ module.exports = {
 			let endpointsInArrayWithoutCategory = endpointsInArray[i].slice(0, endpointsInArrayWithoutCategoryByPosition)
 			listOfEndpoints += `<a href="${domain}/api/${endpointsInArrayWithoutCategory}">${endpointsInArray[i]}</a><br>`
 		}
-		return res.render("EndPoints.ejs", { endpoints: listOfEndpoints, codeRequestSample: `${codeRequestSampleOne}<br>   requestedTemperature: 15<br>${codeRequestSampleTwo}` })
+		return res.render("EndPoints.ejs", { homeURL: `<a href="${domain}">Home!</a>`, endpoints: listOfEndpoints, codeRequestSample: `${codeRequestSampleOne}<br>   requestedTemperature: 15<br>${codeRequestSampleTwo}` })
 	}
 }
