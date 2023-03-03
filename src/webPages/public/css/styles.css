@@ -8,6 +8,20 @@ p {
 	font-weight: bold;
 	font-size: 15px;
 }
+
+a:link {
+	color: #737aa2;
+	text-decoration: underline;
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 15px;
+}
+a:hover {
+	color: #737aa2;
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 17px;
+}
 code {
 	font-family: monospace;
 	color: #737aa2;
