@@ -9,6 +9,7 @@ p {
 	font-size: 15px;
 }
 
+
 a:link {
 	color: #737aa2;
 	text-decoration: underline;
@@ -20,7 +21,14 @@ a:hover {
 	color: #737aa2;
 	font-family: monospace;
 	font-weight: bold;
-	font-size: 17px;
+	font-size:20px;
+	text-decoration: none;
+}
+a:visited {
+	color: #737aa2;
+	font-family: monospace;
+	font-weight: bold;
+	font-size:1px;
 }
 code {
 	font-family: monospace;
