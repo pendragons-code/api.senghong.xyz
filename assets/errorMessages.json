@@ -4,5 +4,7 @@
 	"invalidRequest": "You included parameters that were invalid!",
 	"maximumLength": "The string you sent is longer than the limit!",
 	"noStringProvided": "You need to provide a string for this to work!",
-	"minimumLength": "The string you sent is too short!"
+	"minimumLength": "The string you sent is too short!",
+	"gifRequestMaxLimit": "You cannot request more that 10 gifs!",
+	"gifRequestMinimum": "You must at least request 1 gif!"
 }

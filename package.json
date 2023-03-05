@@ -18,6 +18,7 @@
     "express-rate-limit": "^6.7.0",
     "fs-extra": "^11.1.0",
     "path": "^0.12.7",
+    "phin": "^3.7.0",
     "quick.db": "^9.0.8"
   }
 }
