@@ -1,5 +1,6 @@
 const { db } = require("../../loaders/dataBase.js")
 const { animeSlap } = require("../../../assets/animeEmotes.json")
+const { arrayResultBuilder } = require("../../helpfulFunctions/animoteArrayManipulation.js")
 const { invalidRequest, gifRequestMinimum, gifRequestMaxLimit } = require("../../../assets/errorMessages.json")
 module.exports = {
 	name: "animeSlapGIF",
@@ -15,13 +16,9 @@ module.exports = {
 		if(req.body.totalRequestedGifs > 10) return res.json({ error: gifRequestMaxLimit, maxPossible: 10 })
 		if(req.body.gifRequestMinimum < 1) return res.json({ error: gifRequestMinimum })
 		await db.add(`SuccessfulRequestCounter`, 1)
-		let arrayOfSlapGIFs = []
-		for (let i = 0; i < req.body.totalRequestedGifs; ++i) {
-			let randomGifGenerator = animeSlap[Math.floor(Math.random() * animeSlap.length)]
-			arrayOfSlapGIFs.push(randomGifGenerator)
-		}
+		let results = await arrayResultBuilder(req.body.totalRequestedGifs, animeSlap)
 		return res.json({
-			slapGIF: arrayOfSlapGIFs
+			slapGifs: results
 		})
 	}
 }

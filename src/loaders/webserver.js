@@ -28,8 +28,8 @@ app.use("/api/", apiRoute)
 app.use("/docs/", docsRouter)
 app.use("/", frontEnd)
 app.set("view engine", "ejs")
-app.set("views", join(__dirname, "../webPages/views"))
-app.use(express.static(join(__dirname, "../webPages/public")))
+app.set("views", join(__dirname, "../frontEnd/views"))
+app.use(express.static(join(__dirname, "../frontEnd/public")))
 app.use(function(req, res) {
 	res.status(404).json({
 		404: "🍌, 404",
