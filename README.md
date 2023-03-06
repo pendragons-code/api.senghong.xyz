@@ -51,6 +51,7 @@ I like using nodemon and husky, but I recognize that some other people like to u
 .
 ├── app.js
 ├── assets
+│   ├── animeEmotes.json
 │   ├── codeRequestSample.js
 │   └── errorMessages.json
 ├── configuration
@@ -70,6 +71,9 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │   │   │   ├── minuteOfArc.js
 │   │   │   ├── radian.js
 │   │   │   └── secondOfArc.js
+│   │   ├── animote
+│   │   │   ├── slap.js
+│   │   │   └── smile.js
 │   │   ├── decoding
 │   │   │   ├── base64.js
 │   │   │   └── binary.js
@@ -88,6 +92,8 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │   │   │   ├── nanometer.js
 │   │   │   ├── nauticalMile.js
 │   │   │   └── yard.js
+│   │   ├── password
+│   │   │   └── checkRockYou.js
 │   │   ├── report
 │   │   │   └── errors.js
 │   │   ├── speed
@@ -100,28 +106,32 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │   │       ├── celsius.js
 │   │       ├── fahrenheit.js
 │   │       └── kelvin.js
-│   ├── loaders
-│   │   ├── apiRoutes.js
-│   │   ├── databaseBackUp.js
-│   │   ├── dataBase.js
-│   │   ├── docsBuilder.js
-│   │   ├── frontEnd.js
-│   │   └── webserver.js
-│   └── webPages
-│       ├── PageLoader
-│       │   ├── EndPointLister.js
-│       │   └── landing.js
-│       ├── public
-│       │   ├── ads.txt
-│       │   └── css
-│       │       ├── landingPage.css
-│       │       └── styles.css
-│       └── views
-│           ├── docs.ejs
-│           ├── EndPoints.ejs
-│           └── landingPage.ejs
-└── tests
-    └── endpointTest.js
+│   ├── frontEnd
+│   │   ├── PageLoader
+│   │   │   ├── EndPointLister.js
+│   │   │   └── landing.js
+│   │   ├── public
+│   │   │   ├── ads.txt
+│   │   │   └── css
+│   │   │       ├── landingPage.css
+│   │   │       └── styles.css
+│   │   └── views
+│   │       ├── docs.ejs
+│   │       ├── EndPoints.ejs
+│   │       └── landingPage.ejs
+│   ├── helpfulFunctions
+│   │   └── animoteArrayManipulation.js
+│   └── loaders
+│       ├── apiRoutes.js
+│       ├── assetLoader.js
+│       ├── databaseBackUp.js
+│       ├── dataBase.js
+│       ├── docsBuilder.js
+│       ├── frontEnd.js
+│       └── webserver.js
+├── tests
+│   └── fetchAllEndPoints.js
+└── TODOS.md
 
-20 directories, 54 files
+23 directories, 61 files
 ```
