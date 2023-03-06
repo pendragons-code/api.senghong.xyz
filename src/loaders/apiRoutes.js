@@ -30,7 +30,6 @@ async function loadRoutes() {
 		}
 	}
 	await db.set("listOfCategories", listOfCategories)
-	console.log(await db.get("listOfCategories"))
 }
 loadRoutes()
 module.exports = routerAPI
