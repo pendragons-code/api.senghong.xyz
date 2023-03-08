@@ -80,6 +80,8 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │   │   ├── encoding
 │   │   │   ├── base64.js
 │   │   │   └── binary.js
+│   │   ├── geolocation
+│   │   │   └── ipAddress.js
 │   │   ├── length
 │   │   │   ├── centimeters.js
 │   │   │   ├── foot.js
@@ -133,5 +135,5 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │   └── fetchAllEndPoints.js
 └── TODOS.md
 
-23 directories, 61 files
+24 directories, 62 files
 ```
