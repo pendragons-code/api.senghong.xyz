@@ -3,16 +3,17 @@ const { db } = require("../../loaders/dataBase.js")
 const { invalidRequest, noStringProvided } = require("../../../assets/errorMessages.json")
 module.exports = {
 	name: "reverseDNSlookup",
+	category: "DNS-things",
 	utilisation:`
 	{
-		requestedIP: "142.250.80.46"
+		requested: "142.250.80.46"
 	}
 	`,
 	async execute(req, res) {
-		if(!req.body.requestedIP) return res.json({ error: invalidRequest })
-		if(typeof req.body.requestedIP !== "string") return res.json({ error: noStringProvided })
+		if(!req.body.requested) return res.json({ error: invalidRequest })
+		if(typeof req.body.requested !== "string") return res.json({ error: noStringProvided })
 		await db.add(`SuccessfulRequestCounter`, 1)
-		reverse(req.body.requestedIP, (error, hostname) => {
+		reverse(req.body.requested, (error, hostname) => {
 			if(error || !hostname) return res.json({ error: "Something went wrong, I could not reach the address" })
 			return res.json({
 				resultHostname: hostname,
