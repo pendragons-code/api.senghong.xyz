@@ -1,4 +1,5 @@
 const express = require("express")
+const helmet = require("helmet")
 const env = require("dotenv").config()
 const rateLimit = require("express-rate-limit")
 const { join } = require("path")
@@ -22,7 +23,7 @@ app.use(function(req, res, next) {
 	res.setHeader("Content-Security-Policy", "frame-ancestors 'self';")
 	next()
 })
-
+app.use(helmet)
 app.use(limiter)
 app.use("/api/", apiRoute)
 app.use("/docs/", docsRouter)
