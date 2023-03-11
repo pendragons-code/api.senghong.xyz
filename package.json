@@ -1,13 +1,13 @@
 {
   "name": "senghong.xyz",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.0 [Public Release]",
+  "description": "A basic API that I decided to make because I was bored. JK another project I wanted to use to integrate to my portfolio.",
   "main": "app.js",
   "scripts": {
     "deploy": "nodemon --max-old-space-size=3072 . > logfile 2> errfile"
   },
   "keywords": [],
-  "author": "",
+  "author": "pendragons-code",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.2.2",

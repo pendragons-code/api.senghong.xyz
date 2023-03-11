@@ -32,7 +32,9 @@ async function TestLoadAllEndpoints(date, month, year, hours, minutes, seconds) 
 		}
 	}
 	console.log("Load End!")
-
+	let failures = await db.get(`endPointTest_${timeOfTest}.endPointsFailedLoad`)
+	if(failures === undefined) failures = []
+	console.log(`Failures: ${failures.length}\n\n\n`)
 }
 async function TestRequestAllEndpoints(date, month, year, hours, minutes, seconds) {
 // This is a dumb move, repeating the same part of the code 2 times, but I am too lazy, I will most likely tidy this up later.
@@ -59,5 +61,8 @@ async function TestRequestAllEndpoints(date, month, year, hours, minutes, second
 		}
 	}
 	console.log("Request End!")
+	let failuresRequest = await db.get(`RequestEndpoint_${timeOfTest}.endPointsFailedLoad`)
+	if(failuresRequest === undefined) failuresRequest = []
+	console.log(`Failures: ${failuresRequest.length}\n\n\n`)
 }
 module.exports = { TestLoadAllEndpoints, TestRequestAllEndpoints }
