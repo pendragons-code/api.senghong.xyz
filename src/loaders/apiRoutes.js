@@ -3,7 +3,7 @@ const { noJsonProvided } = require("../../assets/errorMessages.json")
 const { db } = require("./dataBase.js")
 const express = require("express")
 const routerAPI = express.Router()
-routerAPI.use(express.json())
+routerAPI.use(express.json({ limit: "100mb" }))
 routerAPI.get("/test", async (req, res) => {
 	res.send("hit test")
 })
