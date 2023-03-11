@@ -10,7 +10,7 @@ module.exports = {
 	}
 	`, async execute(req, res) {
 		if(!req.body.requestedString) return res.json({ error: invalidRequest })
-		if(!isNaN(requestedString)) return res.json({ error: noStringProvided })
+		if(typeof req.body.requestedString !== "string") return res.json({ error: noStringProvided })
 		if(req.body.requestedString.length < 1) return res.json({ error: "Your password must be at least 1 character long." })
 		if(req.body.requestedString.length > 200) return res.json({ error: maximumLength, maximumAllowedLength: 200 })
 		await db.add(`SuccessfulRequestCounter`, 1)

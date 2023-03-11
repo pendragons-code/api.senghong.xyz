@@ -10,6 +10,7 @@ module.exports = {
 	`,
 	async execute(req, res) {
 		if(!req.body.errorName) return res.json({ error: "You need to provide an error name for me to parse!" })
+		if(typeof req.body.errorName !== "string" || typeof req.body.errorDescription !== "string") return res.json({ error: "You need to provide strings!" })
 		if(req.body.errorName.length < 10) return res.json({ error: "Your error name must be more than 25 characters!" })
 		if(req.body.errorName.length > 200) return res.json({ error: "Your error name must not be more than 200 characters" })
 
