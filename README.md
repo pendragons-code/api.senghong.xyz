@@ -72,11 +72,15 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │   │   │   ├── radian.js
 │   │   │   └── secondOfArc.js
 │   │   ├── animote
+│   │   │   ├── pout.js
 │   │   │   ├── slap.js
 │   │   │   └── smile.js
 │   │   ├── decoding
 │   │   │   ├── base64.js
 │   │   │   └── binary.js
+│   │   ├── DNS-things
+│   │   │   ├── domainToIP.js
+│   │   │   └── IPtoDomain.js
 │   │   ├── encoding
 │   │   │   ├── base64.js
 │   │   │   └── binary.js
@@ -132,8 +136,9 @@ I like using nodemon and husky, but I recognize that some other people like to u
 │       ├── frontEnd.js
 │       └── webserver.js
 ├── tests
-│   └── fetchAllEndPoints.js
+│   ├── testFunctions.js
+│   └── test.js
 └── TODOS.md
 
-24 directories, 62 files
+25 directories, 66 files
 ```
