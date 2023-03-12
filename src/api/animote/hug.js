@@ -18,7 +18,7 @@ module.exports = {
 		await db.add(`SuccessfulRequestCounter`, 1)
 		let results = await arrayResultBuilder(req.body.totalRequestedGifs, animeHug)
 		return res.json({
-			poutGifs: results
+			hugGifs: results
 		})
 	}
 }
