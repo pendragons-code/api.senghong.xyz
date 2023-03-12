@@ -58,7 +58,7 @@ p {
   background-color: #1F618D;
 }
 #showcase {
-    background: #333 url('https://wallpaperaccess.com/full/8351186.gif') no-repeat center center/cover;
+    background: #333 url('/wallpaper.gif') no-repeat center center/cover;
     height: 100vh;
     color: #fff;
     position: relative;

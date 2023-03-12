@@ -23,7 +23,6 @@ app.use(function(req, res, next) {
 	res.setHeader("Content-Security-Policy", "frame-ancestors 'self';")
 	next()
 })
-app.use(helmet())
 app.use(limiter)
 app.use("/api/", apiRoute)
 app.use("/docs/", docsRouter)
@@ -37,6 +36,7 @@ app.use(function(req, res) {
 		error: "404"
 	})
 })
+app.use(helmet())
 app.listen((port), async () => {
 	console.log(`Hanging onto dear life at ${process.pid}\nCurrently listening at http://localhost:${port}!`)
 })
