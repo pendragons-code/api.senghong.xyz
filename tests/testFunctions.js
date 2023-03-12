@@ -46,7 +46,7 @@ async function TestRequestAllEndpoints(date, month, year, hours, minutes, second
 		for(const file of loadApiFile) {
 			const { name, utilisation } = require(`../src/api/${dirs}/${file}`)
 			let output = await phin({
-				url: `${testDomain}${port}/api/${name}`,
+				url: `${domain}${port}/api/${name}`,
 				method: "POST",
 				parse: "json",
 				data: utilisation
